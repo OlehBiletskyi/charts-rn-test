@@ -1,21 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { Charts } from './src/charts';
+import {ECharts} from "react-native-echarts-wrapper";
 
 export default function App() {
+
+
+  const option = {
+    xAxis: {
+      type: "category",
+      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    },
+    yAxis: {
+      type: "value"
+    },
+    series: [
+      {
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: "line"
+      }
+    ]
+  };
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Charts />
-    </View>
+      <View style={styles.chartContainer}>
+        <Text>hello</Text>
+        <ECharts
+            option={option}
+            backgroundColor="rgba(93, 169, 81, 0.3)"
+        />
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  chartContainer: {
+    flex: 1
+  }
 });
