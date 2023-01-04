@@ -9,10 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@unimodules/react-native-adapter": "^6.3.9",
     "expo": "~47.0.9",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-fusioncharts": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
