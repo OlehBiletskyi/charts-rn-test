@@ -1,23 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Charts } from './src/charts';
-import {ReactNativeChartsWrapper} from "./src/react-native-charts-wrapper";
+import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+
+import { LineChart } from 'react-native-charts-wrapper';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/*<Charts />*/}
-      <ReactNativeChartsWrapper/>
-    </View>
-  );
+    return (
+        <>
+            <Text>react-native-charts-wrapper</Text>
+            <Text>ERROR: Invariant Violation: requireNativeComponent: "RNLineChart" was not found in the UIManager.</Text>
+            <View style={{flex: 1}}>
+                <View style={styles.container}>
+                    <LineChart style={styles.chart}
+                               data={{dataSets:[{label: "demo", values: [{y: 1}, {y: 2}, {y: 1}]}]}}
+                    />
+                </View>
+            </View>
+        </>
+
+    );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#F5FCFF'
   },
+  chart: {
+    flex: 1
+  }
 });
